@@ -13,7 +13,9 @@ import { AppService } from './app.service';
         options: {
           client: {
             clientId: 'users',
-            brokers: ['localhost:9092'],
+            brokers: [
+              'localhost:9092',
+            ],
           },
           consumer: {
             groupId: 'users-consumer',
