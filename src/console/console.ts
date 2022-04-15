@@ -15,8 +15,8 @@ async function bootstrap() {
 
   if (map[command]) {
     map[command](app)
-    await app.close();
-    process.exit(0);
+    // await app.close();
+    // process.exit(0);
   } else {
     console.log('Command not found');
     process.exit(1);

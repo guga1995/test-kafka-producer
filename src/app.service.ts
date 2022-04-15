@@ -6,7 +6,7 @@ import { PhoneNumberChangedEvent } from './phone-number-changed.event';
 @Injectable()
 export class AppService {
   constructor(
-    @Inject('USERS_SERVICE') private readonly usersClient: ClientKafka,
+    @Inject('KAFKA_SERVICE') private readonly usersClient: ClientKafka,
   ) {}
 
   getHello(): string {

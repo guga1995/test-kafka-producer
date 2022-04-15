@@ -8,13 +8,15 @@ import { AppService } from './app.service';
   imports: [
     ClientsModule.register([
       {
-        name: 'USERS_SERVICE',
+        name: 'KAFKA_SERVICE',
         transport: Transport.KAFKA,
         options: {
           client: {
-            clientId: 'users',
+            clientId: 'users-producer',
             brokers: [
-              'localhost:9092',
+              '192.168.41.193:9092',
+              '192.168.41.194:9092',
+              '192.168.41.195:9092',
             ],
           },
           consumer: {
