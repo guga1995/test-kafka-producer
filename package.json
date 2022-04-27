@@ -19,7 +19,7 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "execute": "ts-node ./src/console/console.ts"
+    "execute": "ts-node ./src/commander/main.ts"
   },
   "dependencies": {
     "@nestjs/common": "^8.0.0",
@@ -28,6 +28,7 @@
     "@nestjs/platform-express": "^8.0.0",
     "avro-js": "^1.11.0",
     "kafkajs": "^1.16.0",
+    "nest-commander": "^2.5.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0"
