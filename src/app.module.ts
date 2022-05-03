@@ -2,31 +2,14 @@
 import { Module } from '@nestjs/common';
 import { ClientsModule, Transport } from '@nestjs/microservices';
 import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { TestModule } from './testModule/test.module';
+import {KafkaModule} from './kafka/kafka.module'
 
 @Module({
   imports: [
-    ClientsModule.register([
-      {
-        name: 'KAFKA_SERVICE',
-        transport: Transport.KAFKA,
-        options: {
-          client: {
-            clientId: 'users-producer',
-            brokers: [
-              '192.168.41.193:9092',
-              '192.168.41.194:9092',
-              '192.168.41.195:9092',
-            ],
-          },
-          consumer: {
-            groupId: 'users-consumer',
-          },
-        },
-      },
-    ]),
+    TestModule,
+    KafkaModule
   ],
   controllers: [AppController],
-  providers: [AppService],
 })
 export class AppModule {}
